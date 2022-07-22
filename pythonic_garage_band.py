@@ -29,19 +29,20 @@ class Musician:
         self.first = first
         self.instrument = instrument
 
-        Band.members.append(self)
-
     def name_and_role(self):
-        return print(f"My name is {self.first} and I play {self.instrument}")
+        return f"My name is {self.first} and I play {self.instrument}"
 
 
 class Guitarist(Musician):
     pass
 
 
-class Bassist:
+class Bassist(Musician):
     pass
 
 
-class Drummer:
+class Drummer(Musician):
     pass
+
+
+person = Guitarist('Kyle', 'guitarist')

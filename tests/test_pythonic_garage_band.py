@@ -1,6 +1,6 @@
 import pytest
 
-from pythonic_garage_band.band import (
+from pythonic_garage_band import (
     Band,
     Musician,
     Guitarist,
@@ -9,49 +9,43 @@ from pythonic_garage_band.band import (
 )
 
 
-
 def test_guitarist_str():
-    joan = Guitarist("Joan Jett")
+    joan = Guitarist("Joan Jett", "guitar")
     actual = str(joan)
     expected = "My name is Joan Jett and I play guitar"
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_guitarist_repr():
-    joan = Guitarist("Joan Jett")
+    joan = Guitarist("Joan Jett", "guitar")
     actual = repr(joan)
     expected = "Guitarist instance. Name = Joan Jett"
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_drummer_str():
-    sheila = Drummer("Sheila E.")
+    sheila = Drummer("Sheila E.", "drums")
     actual = str(sheila)
     expected = "My name is Sheila E. and I play drums"
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_drummer_repr():
-    sheila = Drummer("Sheila E.")
+    sheila = Drummer("Sheila E.", "drums")
     actual = repr(sheila)
     expected = "Drummer instance. Name = Sheila E."
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_bassist_str():
-    meshell = Bassist("Meshell Ndegeocello")
+    meshell = Bassist("Meshell Ndegeocello", "bass")
     actual = str(meshell)
     expected = "My name is Meshell Ndegeocello and I play bass"
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
 def test_bassist_repr():
-    meshell = Bassist("Meshell Ndegeocello")
+    meshell = Bassist("Meshell Ndegeocello", "bass")
     actual = repr(meshell)
     expected = "Bassist instance. Name = Meshell Ndegeocello"
     assert actual == expected
@@ -64,28 +58,24 @@ def test_band_name():
     assert nirvana.name == "Nirvana"
 
 
-@pytest.mark.skip("todo")
 def test_guitarist():
-    jimi = Guitarist("Jimi Hendrix")
+    jimi = Guitarist("Jimi Hendrix", "guitar")
     assert jimi.name == "Jimi Hendrix"
     assert jimi.get_instrument() == "guitar"
 
 
-@pytest.mark.skip("todo")
 def test_bassist():
-    flea = Bassist("Flea")
+    flea = Bassist("Flea", "bass")
     assert flea.name == "Flea"
     assert flea.get_instrument() == "bass"
 
 
-@pytest.mark.skip("todo")
 def test_drummer():
-    ginger = Drummer("Ginger Baker")
+    ginger = Drummer("Ginger Baker", "drums")
     assert ginger.name == "Ginger Baker"
     assert ginger.get_instrument() == "drums"
 
 
-@pytest.mark.skip("todo")
 def test_instruments(one_band):
     instruments = ["guitar", "bass", "drums"]
     for i, member in enumerate(one_band.members):
